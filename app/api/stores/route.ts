@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const body = await req.json() // getting body from request
     const { name } = body // getting name from body
 
-    if (!userId) return new NextResponse('Unauthorized', { status: 401 })
+    if (!userId) return new NextResponse('Unauthenticated', { status: 401 })
 
     if (!name) return new NextResponse('Name is required', { status: 400 })
 
@@ -25,6 +25,7 @@ export async function POST(req: Request) {
     // returning store
     return NextResponse.json(store)
   } catch (error: any) {
+    // '[BILLBOARDS_POST]' - this is just a tag for easier debugging
     console.error('[STORES_POST]', error)
     return new NextResponse('Server Error', { status: 500 })
   }

@@ -1,20 +1,20 @@
-'use client'
-import { useStoreModalStore } from '@/hooks/use-store-modal'
-import { useEffect } from 'react'
+"use client";
+import { useStoreModalStore } from "@/hooks/use-store-modal";
+import { useEffect } from "react";
 
 // page just to trigger modal with store setup form
 const SetupPage = () => {
-  const onOpen = useStoreModalStore((state) => state.onOpen)
-  const isOpen = useStoreModalStore((state) => state.isOpen)
+  const onOpen = useStoreModalStore((state) => state.onOpen);
+  const isOpen = useStoreModalStore((state) => state.isOpen);
 
   useEffect(() => {
     if (!isOpen) {
-      onOpen()
+      onOpen();
     }
-  }, [isOpen, onOpen]) // this is a trigger to open the modal on page load. Or we can declare StoreModal in div here and pass the props to it.
+  }, [isOpen, onOpen]); // this is a trigger to open the modal on page load. Or we can declare StoreModal in div here and pass the props to it.
 
   // return <div className='flex min-h-screen flex-col items-center p-24'></div>
-  return null
-}
+  return null;
+};
 
-export default SetupPage
+export default SetupPage;

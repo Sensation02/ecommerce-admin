@@ -1,8 +1,8 @@
 import React, { use, useEffect } from 'react'
-import BillboardsClient from '@/app/(dashboard)/[storeId]/(routes)/billboards/components/BillboardsClient'
 import prismadb from '@/lib/prismadb'
-import { BillboardColumn } from './components/BillboardColumns'
 import { format } from 'date-fns'
+import { BillboardColumn } from './components/Columns'
+import BillboardsClient from './components/Client'
 
 const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
   // fetching billboards from the API

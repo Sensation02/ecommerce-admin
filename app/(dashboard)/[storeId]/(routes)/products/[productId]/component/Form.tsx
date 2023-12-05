@@ -338,7 +338,9 @@ export const ProductForm: React.FC<Props> = ({
                   <div className='space-y-1 leading-none'>
                     <FormLabel>Archived</FormLabel>
                     <FormDescription>
-                      Archived products will be hidden from the store.
+                      Archived products will be hidden from the store. Notice
+                      that if product is archived, it won't be shown even with
+                      API calls.
                     </FormDescription>
                   </div>
                 </FormItem>
